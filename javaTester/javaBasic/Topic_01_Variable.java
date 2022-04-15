@@ -1,6 +1,6 @@
 package javaBasic;
 
-public class Topic_01_Data_Type {
+public class Topic_01_Variable {
 	static int studentNumber;
 	static boolean statusValue;
 	static final String BROWSER_NAME = "Chrome";// constant
@@ -17,12 +17,12 @@ public class Topic_01_Data_Type {
 		System.out.println(studentPrice);
 
 		// từ class prefer tới biến
-		System.out.println(Topic_01_Data_Type.BROWSER_NAME);
+		System.out.println(Topic_01_Variable.BROWSER_NAME);
 
 		// Khai báo đối tượng
-		Topic_01_Data_Type topic_1 = new Topic_01_Data_Type();
-		Topic_01_Data_Type topic_2 = new Topic_01_Data_Type();
-		Topic_01_Data_Type topic_3 = new Topic_01_Data_Type();
+		Topic_01_Variable topic_1 = new Topic_01_Variable();
+		Topic_01_Variable topic_2 = new Topic_01_Variable();
+		Topic_01_Variable topic_3 = new Topic_01_Variable();
 
 		// từ đối tượng prefer tới biến
 		
