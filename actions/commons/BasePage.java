@@ -1,5 +1,5 @@
 package commons;
 
-public class BasePage {
-
+public class BasePage extends Pages implements IPage{
+	
 }
