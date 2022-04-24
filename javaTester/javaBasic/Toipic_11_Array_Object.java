@@ -32,9 +32,5 @@ public class Toipic_11_Array_Object {
 		}
 	}
 	
-	@Test
-	public static void TC_01_For() {
-		
-	}
 
 }
