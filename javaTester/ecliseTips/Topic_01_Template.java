@@ -16,7 +16,6 @@ public class Topic_01_Template {
 		
 		Assert.assertTrue(false);
 		
-		Faker fake = new Faker();
 	}
 
 }
