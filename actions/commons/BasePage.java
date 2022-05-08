@@ -124,7 +124,6 @@ public class BasePage {
 		element.sendKeys(textValue);
 	}
 
-
 	public void selectItemInDefaultDropdown(WebDriver driver, String xpathLocator, String textItem) {
 		Select select = new Select(getWebElement(driver, xpathLocator));
 		select.selectByValue(textItem);
