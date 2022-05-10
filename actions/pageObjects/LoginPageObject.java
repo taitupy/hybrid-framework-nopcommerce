@@ -15,12 +15,11 @@ public class LoginPageObject extends BasePage{
 	public void clickToLoginButton() {
 		waitForElementClickabe(driver, LoginPageUI.LOGIN_BUTTON);
 		clickToElement(driver, LoginPageUI.LOGIN_BUTTON);
-		
 	}
 
 	public String getErrorMessageAtEmailTextbox() {
-		waitForElementVisible(driver, LoginPageUI.LOGIN_ERROR_MESSAGE_TEXTBOX);
-		return getElementText(driver, LoginPageUI.LOGIN_ERROR_MESSAGE_TEXTBOX);
+		waitForElementVisible(driver, LoginPageUI.EMAIL_ERROR_MESSAGE);
+		return getElementText(driver, LoginPageUI.EMAIL_ERROR_MESSAGE);
 	}
 
 	public void inputToEmailTextbox(String email) {
@@ -34,8 +33,8 @@ public class LoginPageObject extends BasePage{
 	}
 
 	public String getErrorMessageAtEmailTextboxIsNotRegisterYet() {
-		waitForElementVisible(driver, LoginPageUI.LOGIN_ERROR_MESSAGE_NOT_EXIST_TEXTBOX);
-		return getElementText(driver, LoginPageUI.LOGIN_ERROR_MESSAGE_NOT_EXIST_TEXTBOX);
+		waitForElementVisible(driver, LoginPageUI.UNSUCCESSFUL_ERROR_MESSAGE);
+		return getElementText(driver, LoginPageUI.UNSUCCESSFUL_ERROR_MESSAGE);
 	}
 
 }
