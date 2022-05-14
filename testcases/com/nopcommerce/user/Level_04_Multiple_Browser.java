@@ -40,7 +40,7 @@ public class Level_04_Multiple_Browser extends BaseTest{
 
 	@Test
 	public void Login_01_Empty_Data() {
-		homePage.clickToLoginLink();
+		homePage.openLoginPage();
 		
 		// Từ trang Home- Click Login Link -> Qua trang Login
 		loginPage = new LoginPageObject(driver);
@@ -52,7 +52,7 @@ public class Level_04_Multiple_Browser extends BaseTest{
 
 	@Test
 	public void Login_02_Invalid_Email() {
-		homePage.clickToLoginLink();
+		homePage.openLoginPage();
 		
 		// Từ trang Home- Click Login Link -> Qua trang Login
 		loginPage = new LoginPageObject(driver);
