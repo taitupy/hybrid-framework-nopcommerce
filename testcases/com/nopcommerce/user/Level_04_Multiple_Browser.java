@@ -3,9 +3,9 @@ package com.nopcommerce.user;
 import org.testng.annotations.Test;
 
 import commons.BaseTest;
-import pageObjects.HomePageObject;
-import pageObjects.LoginPageObject;
-import pageObjects.RegisterPageObject;
+import pageObjects.nopCommerce.user.UserHomePageObject;
+import pageObjects.nopCommerce.user.UserLoginPageObject;
+import pageObjects.nopCommerce.user.UserRegisterPageObject;
 
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
@@ -18,9 +18,9 @@ import org.testng.annotations.AfterClass;
 
 public class Level_04_Multiple_Browser extends BaseTest{
 	private WebDriver driver;
-	private HomePageObject homePage;
-	private LoginPageObject loginPage;
-	private RegisterPageObject registerPage;
+	private UserHomePageObject homePage;
+	private UserLoginPageObject loginPage;
+	private UserRegisterPageObject registerPage;
 	private String firstName, lastName, invalidEmail, notFoundEmail,existingEmail, password;
 
 	@Parameters("browser")
@@ -28,7 +28,7 @@ public class Level_04_Multiple_Browser extends BaseTest{
 	public void beforeClass(String browserName) {
 		driver = getBrowserDriver(browserName);
 		
-		homePage = new HomePageObject(driver);
+		homePage = new UserHomePageObject(driver);
 		
 		firstName = "Automation";
 		lastName  = "FC";
@@ -43,7 +43,7 @@ public class Level_04_Multiple_Browser extends BaseTest{
 		homePage.openLoginPage();
 		
 		// Từ trang Home- Click Login Link -> Qua trang Login
-		loginPage = new LoginPageObject(driver);
+		loginPage = new UserLoginPageObject(driver);
 
 		loginPage.clickToLoginButton();
 
@@ -55,7 +55,7 @@ public class Level_04_Multiple_Browser extends BaseTest{
 		homePage.openLoginPage();
 		
 		// Từ trang Home- Click Login Link -> Qua trang Login
-		loginPage = new LoginPageObject(driver);
+		loginPage = new UserLoginPageObject(driver);
 		
 		loginPage.inputToEmailTextbox(invalidEmail);
 		

@@ -2,9 +2,9 @@ package com.nopcommerce.user;
 
 import org.testng.annotations.Test;
 
-import pageObjects.HomePageObject;
-import pageObjects.LoginPageObject;
-import pageObjects.RegisterPageObject;
+import pageObjects.nopCommerce.user.UserHomePageObject;
+import pageObjects.nopCommerce.user.UserLoginPageObject;
+import pageObjects.nopCommerce.user.UserRegisterPageObject;
 
 import org.testng.annotations.BeforeClass;
 
@@ -18,9 +18,9 @@ import org.testng.annotations.AfterClass;
 
 public class Level_03_Page_Object_02_Login {
 	private WebDriver driver;
-	private HomePageObject homePage;
-	private LoginPageObject loginPage;
-	private RegisterPageObject registerPage;
+	private UserHomePageObject homePage;
+	private UserLoginPageObject loginPage;
+	private UserRegisterPageObject registerPage;
 	private String projectPath = System.getProperty("user.dir");
 	private String firstName, lastName, invalidEmail, notFoundEmail,existingEmail, password;
 
@@ -31,7 +31,7 @@ public class Level_03_Page_Object_02_Login {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		driver.get("https://demo.nopcommerce.com/");
 		
-		homePage = new HomePageObject(driver);
+		homePage = new UserHomePageObject(driver);
 		
 		firstName = "Automation";
 		lastName  = "FC";
@@ -44,7 +44,7 @@ public class Level_03_Page_Object_02_Login {
 		homePage.openRegisterPage();
 		
 		// Click Register link -> nhảy qua trang Register
-		registerPage = new RegisterPageObject(driver);
+		registerPage = new UserRegisterPageObject(driver);
 
 		System.out.println("Pre-condition - Step 02: Input to required fields");
 		registerPage.inputToFirstnameTextbox(firstName);
@@ -63,7 +63,7 @@ public class Level_03_Page_Object_02_Login {
 		registerPage.clickToLogoutLink();
 		
 		// Click Logout thì business nó sẽ quay về trang HomePage
-		homePage = new HomePageObject(driver);
+		homePage = new UserHomePageObject(driver);
 	}
 
 	@Test
@@ -71,7 +71,7 @@ public class Level_03_Page_Object_02_Login {
 		homePage.openLoginPage();
 		
 		// Từ trang Home- Click Login Link -> Qua trang Login
-		loginPage = new LoginPageObject(driver);
+		loginPage = new UserLoginPageObject(driver);
 
 		loginPage.clickToLoginButton();
 
@@ -83,7 +83,7 @@ public class Level_03_Page_Object_02_Login {
 		homePage.openLoginPage();
 		
 		// Từ trang Home- Click Login Link -> Qua trang Login
-		loginPage = new LoginPageObject(driver);
+		loginPage = new UserLoginPageObject(driver);
 		
 		loginPage.inputToEmailTextbox(invalidEmail);
 		
@@ -97,7 +97,7 @@ public class Level_03_Page_Object_02_Login {
 		homePage.openLoginPage();
 		
 		// Từ trang Home- Click Login Link -> Qua trang Login
-		loginPage = new LoginPageObject(driver);
+		loginPage = new UserLoginPageObject(driver);
 		
 		loginPage.inputToEmailTextbox(notFoundEmail);
 		
@@ -111,7 +111,7 @@ public class Level_03_Page_Object_02_Login {
 		homePage.openLoginPage();
 		
 		// Từ trang Home- Click Login Link -> Qua trang Login
-		loginPage = new LoginPageObject(driver);
+		loginPage = new UserLoginPageObject(driver);
 		
 		loginPage.inputToEmailTextbox(existingEmail);
 		loginPage.inputToPasswordTextbox("");
@@ -126,7 +126,7 @@ public class Level_03_Page_Object_02_Login {
 		homePage.openLoginPage();
 
 		// Từ trang Home- Click Login Link -> Qua trang Login
-		loginPage = new LoginPageObject(driver);
+		loginPage = new UserLoginPageObject(driver);
 		
 		loginPage.inputToEmailTextbox(existingEmail);
 		loginPage.inputToPasswordTextbox("222333");
@@ -141,7 +141,7 @@ public class Level_03_Page_Object_02_Login {
 		homePage.openLoginPage();
 
 		// Từ trang Home- Click Login Link -> Qua trang Login
-		loginPage = new LoginPageObject(driver);
+		loginPage = new UserLoginPageObject(driver);
 		
 		loginPage.inputToEmailTextbox(existingEmail);
 		loginPage.inputToPasswordTextbox(password);
@@ -149,7 +149,7 @@ public class Level_03_Page_Object_02_Login {
 		loginPage.clickToLoginButton();
 		
 		// Login thành công -> HomePage
-		homePage = new HomePageObject(driver);
+		homePage = new UserHomePageObject(driver);
 		
 		Assert.assertTrue(homePage.isMyAccountLinkDisplayed());
 	}

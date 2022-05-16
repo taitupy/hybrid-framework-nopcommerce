@@ -3,9 +3,9 @@ package com.nopcommerce.user;
 import org.testng.annotations.Test;
 
 import commons.BaseTest;
-import pageObjects.HomePageObject;
-import pageObjects.LoginPageObject;
-import pageObjects.RegisterPageObject;
+import pageObjects.nopCommerce.user.UserHomePageObject;
+import pageObjects.nopCommerce.user.UserLoginPageObject;
+import pageObjects.nopCommerce.user.UserRegisterPageObject;
 
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
@@ -20,9 +20,9 @@ import org.testng.annotations.AfterClass;
 
 public class Level_06_Page_Generator_Manager_I extends BaseTest{
 	private WebDriver driver;
-	private HomePageObject homePage;
-	private LoginPageObject loginPage;
-	private RegisterPageObject registerPage;
+	private UserHomePageObject homePage;
+	private UserLoginPageObject loginPage;
+	private UserRegisterPageObject registerPage;
 	private String projectPath = System.getProperty("user.dir");
 	private String firstName, lastName, invalidEmail, notFoundEmail,existingEmail, password;
 
@@ -32,7 +32,7 @@ public class Level_06_Page_Generator_Manager_I extends BaseTest{
 		driver = getBrowserDriver(browserName);
 		
 		// 1
-		homePage = new HomePageObject(driver);
+		homePage = new UserHomePageObject(driver);
 		
 		firstName = "Automation";
 		lastName  = "FC";
@@ -45,7 +45,7 @@ public class Level_06_Page_Generator_Manager_I extends BaseTest{
 		homePage.openRegisterPage();
 		
 		// 2
-		registerPage = new RegisterPageObject(driver);
+		registerPage = new UserRegisterPageObject(driver);
 
 		System.out.println("Pre-condition - Step 02: Input to required fields");
 		registerPage.inputToFirstnameTextbox(firstName);
@@ -64,7 +64,7 @@ public class Level_06_Page_Generator_Manager_I extends BaseTest{
 		registerPage.clickToLogoutLink();
 		
 		// 3
-		homePage = new HomePageObject(driver);
+		homePage = new UserHomePageObject(driver);
 	}
 
 	@Test
@@ -73,7 +73,7 @@ public class Level_06_Page_Generator_Manager_I extends BaseTest{
 		
 		// Từ trang Home- Click Login Link -> Qua trang Login
 		// 4
-		loginPage = new LoginPageObject(driver);
+		loginPage = new UserLoginPageObject(driver);
 
 		loginPage.clickToLoginButton();
 
@@ -86,7 +86,7 @@ public class Level_06_Page_Generator_Manager_I extends BaseTest{
 		
 		// Từ trang Home- Click Login Link -> Qua trang Login
 		// 5
-		loginPage = new LoginPageObject(driver);
+		loginPage = new UserLoginPageObject(driver);
 		
 		loginPage.inputToEmailTextbox(invalidEmail);
 		
@@ -101,7 +101,7 @@ public class Level_06_Page_Generator_Manager_I extends BaseTest{
 		
 		// Từ trang Home- Click Login Link -> Qua trang Login
 		// 6
-		loginPage = new LoginPageObject(driver);
+		loginPage = new UserLoginPageObject(driver);
 		
 		loginPage.inputToEmailTextbox(notFoundEmail);
 		
@@ -116,7 +116,7 @@ public class Level_06_Page_Generator_Manager_I extends BaseTest{
 		
 		// Từ trang Home- Click Login Link -> Qua trang Login
 		// 7
-		loginPage = new LoginPageObject(driver);
+		loginPage = new UserLoginPageObject(driver);
 		
 		loginPage.inputToEmailTextbox(existingEmail);
 		loginPage.inputToPasswordTextbox("");
@@ -132,7 +132,7 @@ public class Level_06_Page_Generator_Manager_I extends BaseTest{
 
 		// Từ trang Home- Click Login Link -> Qua trang Login
 		// 8
-		loginPage = new LoginPageObject(driver);
+		loginPage = new UserLoginPageObject(driver);
 		
 		loginPage.inputToEmailTextbox(existingEmail);
 		loginPage.inputToPasswordTextbox("222333");
@@ -148,7 +148,7 @@ public class Level_06_Page_Generator_Manager_I extends BaseTest{
 
 		// Từ trang Home- Click Login Link -> Qua trang Login
 		// 9
-		loginPage = new LoginPageObject(driver);
+		loginPage = new UserLoginPageObject(driver);
 		
 		loginPage.inputToEmailTextbox(existingEmail);
 		loginPage.inputToPasswordTextbox(password);
@@ -157,7 +157,7 @@ public class Level_06_Page_Generator_Manager_I extends BaseTest{
 		
 		// Login thành công -> HomePage
 		// 10
-		homePage = new HomePageObject(driver);
+		homePage = new UserHomePageObject(driver);
 		
 		Assert.assertTrue(homePage.isMyAccountLinkDisplayed());
 	}

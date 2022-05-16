@@ -2,9 +2,9 @@ package com.nopcommerce.user;
 
 import org.testng.annotations.Test;
 
-import PageFactory.HomePageObject;
-import PageFactory.LoginPageObject;
-import PageFactory.RegisterPageObject;
+import PageFactory.nopCommerce.HomePageObject;
+import PageFactory.nopCommerce.LoginPageObject;
+import PageFactory.nopCommerce.RegisterPageObject;
 import commons.BaseTest;
 
 import org.testng.annotations.BeforeClass;
