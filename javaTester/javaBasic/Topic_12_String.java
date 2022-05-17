@@ -96,9 +96,9 @@ public class Topic_12_String {
 		// Đại diện cho 1 chuỗi : %s
 		// %b %t %d
 		String dynamicButtonXpath = "button[@id='%s']";
-		System.out.println("Click to Login button = " + dynamicButtonXpath.format(dynamicButtonXpath, "login"));
-		System.out.println("Click to Search button = " + dynamicButtonXpath.format(dynamicButtonXpath, "search"));
-		System.out.println("Click to Register button = " + dynamicButtonXpath.format(dynamicButtonXpath, "register"));
+		System.out.println("Click to Login button = " + String.format(dynamicButtonXpath, "login"));
+		System.out.println("Click to Search button = " + String.format(dynamicButtonXpath, "search"));
+		System.out.println("Click to Register button = " + String.format(dynamicButtonXpath, "register"));
 		
 	}
 
