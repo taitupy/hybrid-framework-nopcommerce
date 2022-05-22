@@ -16,51 +16,50 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseTest {
 	private WebDriver driver;
-	private String projectPath = System.getProperty("user.dir");
 	
-	protected WebDriver getBrowserDriver(String browserName) {
-		if(browserName.equals("firefox")) {
+	protected WebDriver getBrowserDriver(String browserName, String environmentName) {
+		BrowserList browserList = BrowserList.valueOf(browserName.toUpperCase());
+		if(browserList == BrowserList.FRIEFOX) {
 			WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();
-		}else if(browserName.equals("h_firefox")) {
+		}else if(browserList == BrowserList.H_FIRFOX) {
 			WebDriverManager.firefoxdriver().setup();
-			// Browser Option: Selenium 3.xx trở lên mới có
 			FirefoxOptions options = new FirefoxOptions();
 			options.addArguments("--headless");
 			options.addArguments("window-size=1920x1080");
 			driver = new FirefoxDriver(options);
 		}
-		else if (browserName.equals("chrome")) {
+		else if (browserList == BrowserList.CHROME) {
 			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
 		}
-		else if (browserName.equals("h_chrome")) {
+		else if (browserList == BrowserList.H_CHROME) {
 			WebDriverManager.chromedriver().setup();
 			ChromeOptions options = new ChromeOptions();
 			options.addArguments("--headless");
 			options.addArguments("window-size=1920x1080");
 			driver = new ChromeDriver(options);
 		}
-		else if (browserName.equals("edge")){
+		else if (browserList == BrowserList.EDGE){
 			WebDriverManager.edgedriver().setup();
 			driver = new EdgeDriver();
 		}
-		else if (browserName.equals("ie")){
+		else if (browserList == BrowserList.IE){
 			WebDriverManager.iedriver().arch32().setup();
 			driver = new InternetExplorerDriver();
 		}
-		else if (browserName.equals("opera")){
+		else if (browserList == BrowserList.OPERA){
 			WebDriverManager.operadriver().setup();
 			driver = new OperaDriver();
 		}
-		else if (browserName.equals("coccoc")){
+		else if (browserList == BrowserList.COCCOC){
 			// Cốc cốc browser trừ đi 5-6 version ra chromedriver
 			WebDriverManager.chromedriver().driverVersion("100.0.4896.60").setup();
 			ChromeOptions options = new ChromeOptions();
 			options.setBinary("C:\\Users\\hp\\AppData\\Local\\CocCoc\\Browser\\Application\\browser.exe");
 			driver = new ChromeDriver(options);
 		}
-		else if (browserName.equals("brave")){
+		else if (browserList == BrowserList.BRAVE){
 			// brave browser version nào thì dùng chromedriver version đó
 			WebDriverManager.chromedriver().driverVersion("100.0.4896.60").setup();
 			ChromeOptions options = new ChromeOptions();
@@ -72,9 +71,24 @@ public class BaseTest {
 		}
 		
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		driver.get(GlobalConstants.PORTAL_PAGE_URL);
+		driver.get(getEnviromenUrl(environmentName));
 		
 		return driver;
+	}
+	
+	private String getEnviromenUrl(String serverName) {
+		String envUrl = null;
+		EnviromentList environment = EnviromentList.valueOf(serverName.toUpperCase());
+		if(environment == EnviromentList.DEV) {
+			envUrl = "https://demo.nopcommerce.com/";
+		}else if(environment == EnviromentList.TESTING) {
+			envUrl = "https://admin-demo.nopcommerce.com";
+		}else if(environment == EnviromentList.STAGING) {
+			envUrl = "https://staging.orangehrmlive.com";
+		}else if(environment == EnviromentList.STAGING) {
+			envUrl = "https://production.orangehrmlive.com";
+		}
+		return envUrl;
 	}
 	
 	public int generateFakeNumber() {
