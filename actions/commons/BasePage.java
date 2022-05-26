@@ -132,8 +132,7 @@ public class BasePage {
 	}
 
 	private String getDynamicXpath(String locatorType, String... dynamicValues) {
-		if (locatorType.startsWith("xpath=") || locatorType.startsWith("XPATH=") || locatorType.startsWith("Xpath=")
-				|| locatorType.startsWith("XPath=")) {
+		if (locatorType.startsWith("xpath=") || locatorType.startsWith("XPATH=") || locatorType.startsWith("Xpath=") || locatorType.startsWith("XPath=")) {
 			locatorType = String.format(locatorType, (Object[]) dynamicValues);
 		}
 		return locatorType;
@@ -470,5 +469,5 @@ public class BasePage {
 		return PageGeneratorManager.getAdminLoginPage(driver);
 	}
 
-	private long longTimeout = 30;
+	private long longTimeout = GlobalConstants.LONG_TIMEOUT;
 }

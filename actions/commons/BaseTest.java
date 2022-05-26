@@ -57,10 +57,15 @@ public class BaseTest {
 			// Cốc cốc browser trừ đi 5-6 version ra chromedriver
 			WebDriverManager.chromedriver().driverVersion("100.0.4896.60").setup();
 			ChromeOptions options = new ChromeOptions();
-			options.setBinary("C:\\Users\\hp\\AppData\\Local\\CocCoc\\Browser\\Application\\browser.exe");
+			
+			if(GlobalConstants.OS_NAME.startsWith("Windows")) {
+				options.setBinary("C:\\Users\\hp\\AppData\\Local\\CocCoc\\Browser\\Application\\browser.exe");
+			}else {
+				options.setBinary("....");	
+			}
+			
 			driver = new ChromeDriver(options);
-		}
-		else if (browserList == BrowserList.BRAVE){
+		}else if (browserList == BrowserList.BRAVE){
 			// brave browser version nào thì dùng chromedriver version đó
 			WebDriverManager.chromedriver().driverVersion("100.0.4896.60").setup();
 			ChromeOptions options = new ChromeOptions();
@@ -71,8 +76,8 @@ public class BaseTest {
 			throw new BrowserNotSupport(browserName);
 		}
 		
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		
+		driver.manage().timeouts().implicitlyWait(GlobalConstants.LONG_TIMEOUT, TimeUnit.SECONDS);
+		driver.get(GlobalConstants.PORTAL_DEV_URL);
 		return driver;
 	}
 	
@@ -115,7 +120,13 @@ public class BaseTest {
 			// Cốc cốc browser trừ đi 5-6 version ra chromedriver
 			WebDriverManager.chromedriver().driverVersion("100.0.4896.60").setup();
 			ChromeOptions options = new ChromeOptions();
-			options.setBinary("C:\\Users\\hp\\AppData\\Local\\CocCoc\\Browser\\Application\\browser.exe");
+			
+			if(GlobalConstants.OS_NAME.startsWith("Windows")) {
+				options.setBinary("C:\\Users\\hp\\AppData\\Local\\CocCoc\\Browser\\Application\\browser.exe");
+			}else {
+				options.setBinary("....");	
+			}
+			
 			driver = new ChromeDriver(options);
 		}
 		else if (browserList == BrowserList.BRAVE){
@@ -129,7 +140,7 @@ public class BaseTest {
 			throw new RuntimeException("Browser name invalid");
 		}
 		
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(GlobalConstants.LONG_TIMEOUT, TimeUnit.SECONDS);
 		driver.get(getEnviromenUrl(environmentName));
 		
 		return driver;
