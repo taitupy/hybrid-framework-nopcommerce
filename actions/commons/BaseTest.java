@@ -12,12 +12,13 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.opera.OperaDriver;
 
+import exception.BrowserNotSupport;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseTest {
 	private WebDriver driver;
 	
-	protected WebDriver getBrowserDriver(String browserName) {
+	protected WebDriver getBrowserDriver(String browserName) throws BrowserNotSupport {
 		BrowserList browserList = BrowserList.valueOf(browserName.toUpperCase());
 		if(browserList == BrowserList.FRIEFOX) {
 			WebDriverManager.firefoxdriver().setup();
@@ -67,7 +68,7 @@ public class BaseTest {
 			driver = new ChromeDriver(options);
 		}
 		else {
-			throw new RuntimeException("Browser name invalid");
+			throw new BrowserNotSupport(browserName);
 		}
 		
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
