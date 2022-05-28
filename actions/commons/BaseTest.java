@@ -20,10 +20,10 @@ public class BaseTest {
 	
 	protected WebDriver getBrowserDriver(String browserName) throws BrowserNotSupport {
 		BrowserList browserList = BrowserList.valueOf(browserName.toUpperCase());
-		if(browserList == BrowserList.FRIEFOX) {
+		if(browserList == BrowserList.FIREFOX) {
 			WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();
-		}else if(browserList == BrowserList.H_FIRFOX) {
+		}else if(browserList == BrowserList.H_FIREFOX) {
 			WebDriverManager.firefoxdriver().setup();
 			FirefoxOptions options = new FirefoxOptions();
 			options.addArguments("--headless");
@@ -81,12 +81,12 @@ public class BaseTest {
 		return driver;
 	}
 	
-	protected WebDriver getBrowserDriver(String browserName, String environmentName) {
+	protected WebDriver getBrowserDriver(String browserName, String appUrl) {
 		BrowserList browserList = BrowserList.valueOf(browserName.toUpperCase());
-		if(browserList == BrowserList.FRIEFOX) {
+		if(browserList == BrowserList.FIREFOX) {
 			WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();
-		}else if(browserList == BrowserList.H_FIRFOX) {
+		}else if(browserList == BrowserList.H_FIREFOX) {
 			WebDriverManager.firefoxdriver().setup();
 			FirefoxOptions options = new FirefoxOptions();
 			options.addArguments("--headless");
@@ -141,12 +141,12 @@ public class BaseTest {
 		}
 		
 		driver.manage().timeouts().implicitlyWait(GlobalConstants.LONG_TIMEOUT, TimeUnit.SECONDS);
-		driver.get(getEnviromenUrl(environmentName));
+		driver.get(appUrl);
 		
 		return driver;
 	}
 	
-	private String getEnviromenUrl(String serverName) {
+	protected String getEnviromenUrl(String serverName) {
 		String envUrl = null;
 		EnviromentList environment = EnviromentList.valueOf(serverName.toUpperCase());
 		if(environment == EnviromentList.DEV) {
