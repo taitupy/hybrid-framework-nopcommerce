@@ -64,7 +64,7 @@ public class Level_10_DataTable_DataGrid extends BaseTest {
 		
 	}
 	
-	@Test
+//	@Test
 	public void Data_Tabble_03_Enter_To_Header() {
 		// Đọc dữ liệu của file country.txt ra
 		// Lưu vào 1 List<String> Expected Value = expectedAllCountryValues
@@ -74,6 +74,75 @@ public class Level_10_DataTable_DataGrid extends BaseTest {
 		
 		Assert.assertEquals(actualallCountryValues, expectedallCountryValues);
 		
+	}
+	
+	@Test
+	public void Data_Tabble_04_Action_At_Any_Row() {
+		homePage.clickToLoadButton();
+		homePage.sleepInSecond(2);
+		
+		// Value de nhap lieu - tham so 1
+		// Row number : tai row nao
+		// Ex: Nhap vao textbox tai dong so 3/ 5/ 2
+		// Column name: Album/ Artirs/ Year/ Price
+//		homePage.enterToTextboxByColumnNameAtRowNumber("Album", "1", "Snow man");
+//		
+//		homePage.enterToTextboxByColumnNameAtRowNumber("Artist", "4", "Michale Jackson");
+//		
+//		homePage.enterToTextboxByColumnNameAtRowNumber("Year", "3", "1977");
+//		
+//		homePage.enterToTextboxByColumnNameAtRowNumber("Price", "2", "200");
+//		
+//		homePage.selectDropdownByColumnNameAtRowNumber("Origin", "5", "Japan");
+//		homePage.sleepInSecond(2);
+//		
+//		homePage.checkToCheckboxByColumnNameAtRowNumber("With Poster?", "3");
+//		homePage.checkToCheckboxByColumnNameAtRowNumber("With Poster?", "5");
+//		
+//		homePage.uncheckToCheckboxByColumnNameAtRowNumber("With Poster?", "1");
+//		homePage.uncheckToCheckboxByColumnNameAtRowNumber("With Poster?", "2");
+//		homePage.uncheckToCheckboxByColumnNameAtRowNumber("With Poster?", "4");
+//		homePage.enterToTextboxByColumnNameAtRowNumber("Album", "1", "Snow man");
+//		
+//		homePage.enterToTextboxByColumnNameAtRowNumber("Artist", "4", "Michale Jackson");
+//		
+//		homePage.enterToTextboxByColumnNameAtRowNumber("Year", "3", "1977");
+//		
+//		homePage.enterToTextboxByColumnNameAtRowNumber("Price", "2", "200");
+//		
+//		homePage.selectDropdownByColumnNameAtRowNumber("Origin", "5", "Japan");
+//		homePage.sleepInSecond(2);
+//		
+//		homePage.checkToCheckboxByColumnNameAtRowNumber("With Poster?", "3");
+//		homePage.checkToCheckboxByColumnNameAtRowNumber("With Poster?", "5");
+//		
+//		homePage.uncheckToCheckboxByColumnNameAtRowNumber("With Poster?", "1");
+//		homePage.uncheckToCheckboxByColumnNameAtRowNumber("With Poster?", "2");
+//		homePage.uncheckToCheckboxByColumnNameAtRowNumber("With Poster?", "4");
+		
+		homePage.clickToIconByRowNumber("1", "Remove Current Row");
+		homePage.sleepInSecond(2);
+		
+		homePage.clickToIconByRowNumber("1", "Insert Row Above");
+		homePage.sleepInSecond(2);
+		
+		homePage.clickToIconByRowNumber("3", "Move Up");
+		homePage.sleepInSecond(2);
+		
+		homePage.clickToIconByRowNumber("5", "Remove Current Row");
+		homePage.sleepInSecond(2);
+		
+		homePage.clickToIconByRowNumber("4", "Remove Current Row");
+		homePage.sleepInSecond(2);
+		
+		homePage.clickToIconByRowNumber("3", "Remove Current Row");
+		homePage.sleepInSecond(2);
+		
+		homePage.clickToIconByRowNumber("2", "Remove Current Row");
+		homePage.sleepInSecond(2);
+		
+		homePage.clickToIconByRowNumber("1", "Remove Current Row");
+		homePage.sleepInSecond(2);
 	}
 
 	@AfterClass
