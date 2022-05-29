@@ -1,4 +1,4 @@
-package pageObjects.jQuery;
+package pageObjects.jQuery.dataTable;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -9,7 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import commons.BasePage;
-import pageUIs.jQuery.HomePageUI;
+import pageUIs.jQuery.dataTable.HomePageUI;
 
 public class HomePageObject extends BasePage {
 	WebDriver driver;
@@ -24,13 +24,13 @@ public class HomePageObject extends BasePage {
 	}
 
 	public void enterToHeaderTextboxByLable(String headerLabel, String value) {
-		waitForElementInvisible(driver, HomePageUI.HEADER_TEXTBOX_BY_LABEL, headerLabel);
+		waitForAllElementVisible(driver, HomePageUI.HEADER_TEXTBOX_BY_LABEL, headerLabel);
 		sendkeyToElement(driver, HomePageUI.HEADER_TEXTBOX_BY_LABEL, value, headerLabel);
 		pressKeyToElement(driver, HomePageUI.HEADER_TEXTBOX_BY_LABEL, Keys.ENTER, headerLabel);
 	}
 
 	public boolean isPageNumberActived(String pageNumber) {
-		waitForElementInvisible(driver, HomePageUI.PAGINATION_PAGE_ACTIVED_BY_NUMBER, pageNumber);
+		waitForAllElementVisible(driver, HomePageUI.PAGINATION_PAGE_ACTIVED_BY_NUMBER, pageNumber);
 		return isElementDisplayed(driver, HomePageUI.PAGINATION_PAGE_ACTIVED_BY_NUMBER, pageNumber);
 	}
 
