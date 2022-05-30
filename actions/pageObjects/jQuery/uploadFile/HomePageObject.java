@@ -33,7 +33,7 @@ public class HomePageObject extends BasePage {
 		return isImageLoaded(driver, HomePageUI.FILE_NAME_UPLOADED_IMAGE, fileName);
 	}
 
-	public void clickToStartButto() {
+	public void clickToStartButton() {
 		List<WebElement> startButtons = getListWebElement(driver, HomePageUI.START_BUTTON);
 		for (WebElement startButton : startButtons) {
 			startButton.click();

@@ -42,7 +42,7 @@ public class Level_11_Upload_Files extends BaseTest {
 		Assert.assertTrue(homePage.isFileLoadedByName(csharpFileName));
 
 		// Step 03 - Click to start button
-		homePage.clickToStartButto();
+		homePage.clickToStartButton();
 
 		// Step 04 - Verify single file link uploaded success
 		Assert.assertTrue(homePage.isFileLinkUpLoadedByName(csharpFileName));
@@ -67,7 +67,7 @@ public class Level_11_Upload_Files extends BaseTest {
 		Assert.assertTrue(homePage.isFileLoadedByName(rubyFileName));
 
 		// Step 03 - Click to start button
-		homePage.clickToStartButto();
+		homePage.clickToStartButton();
 
 		// Step 04 - Verify multiple file link uploaded success
 		Assert.assertTrue(homePage.isFileLinkUpLoadedByName(csharpFileName));
