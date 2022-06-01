@@ -155,6 +155,10 @@ public class BaseTest {
 		return driver;
 	}
 	
+	public WebDriver getDriverInstance() {
+		return this.driver;
+	}
+	
 	protected String getEnviromenUrl(String serverName) {
 		String envUrl = null;
 		EnviromentList environment = EnviromentList.valueOf(serverName.toUpperCase());
