@@ -14,7 +14,7 @@ import org.testng.annotations.Test;
 import commons.BaseTest;
 
 @Listeners(commons.MethodListener.class)
-public class Topic_12_Assert_Verify extends BaseTest{
+public class Level_12_Assert_Verify extends BaseTest{
 
 	private WebDriver driver;
 	private String projectPath = System.getProperty("user.dir");
