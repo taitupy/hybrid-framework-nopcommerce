@@ -15,9 +15,7 @@
 	<test name="Run on Chrome">
 		<parameter name="browser" value="chrome" />
 		<classes>
-			<!-- Trigger Common Register run first -->
-			<class name="com.nopcommerce.common.Common_01_Register_Cookies" />
-			<class name="com.nopcommerce.user.Level_16_Share_Data_C" />
+			<class name="com.nopcommerce.user.Level_17_Custom_Close_Driver" />
 		</classes>
 	</test>
 
