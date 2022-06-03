@@ -1,0 +1,4 @@
+[2022-06-03 11:08:33,225] Pre-condition - Step 01: Navigate to 'Login' page
+[2022-06-03 11:08:34,483] Pre-condition - Step 02: Set cookie and reload page
+[2022-06-03 11:08:37,583] Pre-condition - Step 03: Verify 'My Account' Link is displayed
+[2022-06-03 11:08:39,075]  -------------------------- PASSED -------------------------- 

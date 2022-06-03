@@ -219,3 +219,18 @@
 [2022-06-01 15:10:57,048] Login - Step 03: Enter to Password textbox with value is '123456'
 [2022-06-01 15:10:57,208] Login - Step 04: Click to 'Login' button
 [2022-06-01 15:10:58,102] Login - Step 05: Verify 'My Account' Link is displayed
+[2022-06-03 10:12:09,766] Login - Step 01: Navigate to 'Login' page
+[2022-06-03 10:12:10,669] Login - Step 02: Enter to Email textbox with value is 'afc9431@mail.vn'
+[2022-06-03 10:12:10,872] Login - Step 03: Enter to Password textbox with value is '123456'
+[2022-06-03 10:12:11,041] Login - Step 04: Click to 'Login' button
+[2022-06-03 10:28:55,196] Login - Step 01: Navigate to 'Login' page
+[2022-06-03 10:28:55,891] Login - Step 02: Enter to Email textbox with value is 'afc327@mail.vn'
+[2022-06-03 10:28:56,093] Login - Step 03: Enter to Password textbox with value is '123456'
+[2022-06-03 10:28:56,277] Login - Step 04: Click to 'Login' button
+[2022-06-03 11:07:34,934] Pre-condition - Step 01: Navigate to 'Login' page
+[2022-06-03 11:07:35,976] Pre-condition - Step 02: Set cookie and reload page
+[2022-06-03 11:07:39,083] Pre-condition - Step 03: Verify 'My Account' Link is displayed
+[2022-06-03 11:08:33,225] Pre-condition - Step 01: Navigate to 'Login' page
+[2022-06-03 11:08:34,483] Pre-condition - Step 02: Set cookie and reload page
+[2022-06-03 11:08:37,583] Pre-condition - Step 03: Verify 'My Account' Link is displayed
+[2022-06-03 11:08:39,075]  -------------------------- PASSED -------------------------- 
