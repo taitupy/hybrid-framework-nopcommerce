@@ -325,3 +325,38 @@
 [2022-06-04 12:03:07,949] My Account - Step 05: Verify 'Email' value is correctly
 [2022-06-04 12:03:08,018] OS name = windows 10
 [2022-06-04 12:03:08,018] Driver instance name = chromedriver: chrome on windows (e883b0a1ae66d0896823bd359d78277c)
+[2022-06-11 09:32:01,372] Pre-Condition - Step 01: Open browser and admin Url
+[2022-06-11 09:32:08,934] Pre-Condition - Step 02: Enter to Username textbox with value: automationfc
+[2022-06-11 09:32:09,197] Pre-Condition - Step 03: Enter to Password textbox: automationfc
+[2022-06-11 09:32:09,308] Pre-Condition - Step 04: Click to Login button
+[2022-06-11 09:32:12,063] Create_Post - Step 01: Click to 'Posts' menu link
+[2022-06-11 09:32:13,688] Create_Post - Step 02: Get 'Search Posts' Page Url
+[2022-06-11 09:32:13,697] Create_Post - Step 03: Click to 'Add New' button
+[2022-06-11 09:32:16,266] Create_Post - Step 04: Enter to post title
+[2022-06-11 09:32:19,161] Create_Post - Step 05: Enter to body
+[2022-06-11 09:32:20,508] Create_Post - Step 06: Click to Publish button
+[2022-06-11 09:32:21,020] Create_Post - Step 07: Click to Pre-Publish button
+[2022-06-11 09:32:21,382] Create_Post - Step 08: Verify 'Post published' message is displayed
+[2022-06-11 09:32:22,456]  -------------------------- PASSED -------------------------- 
+[2022-06-11 09:32:22,595] Search_Post - Step 01: Open 'Search Post' page
+[2022-06-11 09:32:24,848] OS name = windows 10
+[2022-06-11 09:32:24,849] Driver instance name = firefoxdriver: firefox on windows (a46d6c6e-66f4-4cfb-a538-df7b69f6f8d2)
+[2022-06-13 22:37:02,110] Pre-Condition - Step 01: Open browser and admin Site
+[2022-06-13 22:37:18,073] Pre-Condition - Step 02: Enter to Username textbox with value: automationfc
+[2022-06-13 22:37:18,364] Pre-Condition - Step 03: Enter to Password textbox: automationfc
+[2022-06-13 22:37:18,488] Pre-Condition - Step 04: Click to Login button
+[2022-06-13 22:37:23,639] Create_Post - Step 01: Click to 'Posts' menu link
+[2022-06-13 22:37:25,700] Create_Post - Step 02: Get 'Search Posts' Page Url
+[2022-06-13 22:37:25,708] Create_Post - Step 03: Click to 'Add New' button
+[2022-06-13 22:37:31,049] Create_Post - Step 04: Enter to post title
+[2022-06-13 22:37:35,958] Create_Post - Step 05: Enter to body
+[2022-06-13 22:37:38,173] Create_Post - Step 06: Click to Publish button
+[2022-06-13 22:37:39,489] Create_Post - Step 07: Click to Pre-Publish button
+[2022-06-13 22:37:39,857] Create_Post - Step 08: Verify 'Post published' message is displayed
+[2022-06-13 22:37:41,939]  -------------------------- PASSED -------------------------- 
+[2022-06-13 22:37:42,181] Search_Post - Step 01: Open 'Search Post' page
+[2022-06-13 22:37:44,566] Search_Post - Step 02: Enter to 'Search' textbox
+[2022-06-13 22:37:44,821] Search_Post - Step 03: Click to 'Search Post' button
+[2022-06-13 22:37:47,911] Search_Post - Step 04: Verify Search table contains 'Live Coding Title 4598'
+[2022-06-13 22:38:18,037] OS name = windows 10
+[2022-06-13 22:38:18,037] Driver instance name = firefoxdriver: firefox on windows (ad84508e-4434-4f07-9015-64bd97669f60)

@@ -26,6 +26,7 @@ import pageObjects.nopCommerce.user.UserCustomerInforPageObject;
 import pageObjects.nopCommerce.user.UserHomePageObject;
 import pageObjects.nopCommerce.user.UserMyProductReviewPageObject;
 import pageObjects.nopCommerce.user.UserRewardPointPageObject;
+import pageObjects.wordpress.UserHomePO;
 import pageUIs.jQuery.uploadFile.BasePageJQueryUI;
 import pageUIs.nopCommerce.user.BasePageNopCommerceUI;
 
@@ -649,6 +650,11 @@ public class BasePage {
 		return PageGeneratorManager.getAdminLoginPage(driver);
 	}
 
+	public UserHomePO openEndUserSite(WebDriver driver, String endUserUrl) {
+		openPageUrl(driver, endUserUrl);
+		return pageObjects.wordpress.PageGeneratorManager.getUserHomePage(driver);
+	}
+	
 	private long longTimeout = GlobalConstants.LONG_TIMEOUT;
 	private long shortTimeout = GlobalConstants.SHORT_TIMEOUT;
 }
