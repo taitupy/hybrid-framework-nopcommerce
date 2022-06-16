@@ -321,11 +321,41 @@ public class BaseTest {
 	protected String getCurrentMonth() {
 		DateTime now = new DateTime();
 		int month = now.getMonthOfYear();
-		if (month < 10) {
-			String monthValue = "0" + month;
-			return monthValue;
+//		if (month < 10) {
+//			String monthValue = "0" + month;
+//			return monthValue;
+//		}
+		
+		String temp;
+		switch(month) {
+			case 1:
+				temp = "Jan";
+			case 2:
+				temp = "Feb";
+			case 3:
+				temp = "Mar";
+			case 4:
+				temp = "Apr";
+			case 5:
+				temp = "May";
+			case 6:
+				temp = "June";
+			case 7:
+				temp = "July";
+			case 8:
+				temp = "August";
+			case 9:
+				temp = "Sep";
+			case 10:
+				temp = "Oct";
+			case 11:
+				temp = "Nov";
+			case 12:
+				temp = "Dec";
+			default:
+				temp = "";
 		}
-		return String.valueOf(month);
+		return String.valueOf(temp);
 	}
 
 	protected String getCurrentYear() {
