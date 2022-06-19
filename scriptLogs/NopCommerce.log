@@ -1127,3 +1127,75 @@ Session ID: 86e8927c-3ee3-4c39-93c1-d3b17f1b382c
 [2022-06-16 22:00:14,256]  -------------------------- PASSED -------------------------- 
 [2022-06-16 22:00:14,289] OS name = windows 10
 [2022-06-16 22:00:14,289] Driver instance name = firefoxdriver: firefox on windows (b04d3499-54a2-4e23-80d3-42ac8d480d73)
+[2022-06-17 21:37:45,999] Pre-Condition - Step 01: Open browser and admin Site
+[2022-06-17 21:37:54,006] Pre-Condition - Step 02: Enter to Username textbox with value: automationfc
+[2022-06-17 21:37:54,275] Pre-Condition - Step 03: Enter to Password textbox: automationfc
+[2022-06-17 21:37:54,428] Pre-Condition - Step 04: Click to Login button
+[2022-06-17 21:37:57,217] Create_Post - Step 01: Click to 'Posts' menu link
+[2022-06-17 21:37:58,591] Create_Post - Step 02: Get 'Search Posts' Page Url
+[2022-06-17 21:37:58,597] Create_Post - Step 03: Click to 'Add New' button
+[2022-06-17 21:38:04,617] Create_Post - Step 04: Enter to post title
+[2022-06-17 21:38:07,456] Create_Post - Step 05: Enter to body
+[2022-06-17 21:38:08,755] Create_Post - Step 06: Click to Publish button
+[2022-06-17 21:38:09,150] Create_Post - Step 07: Click to Pre-Publish button
+[2022-06-17 21:38:09,483] Create_Post - Step 08: Verify 'Post published' message is displayed
+[2022-06-17 21:38:39,610] Search_Post - Step 01: Open 'Search Post' page
+[2022-06-17 21:38:41,361] Search_Post - Step 02: Enter to 'Search' textbox
+[2022-06-17 21:38:41,625] Search_Post - Step 03: Click to 'Search Post' button
+[2022-06-17 21:38:43,331] Search_Post - Step 04: Verify Search table contains 'Live Coding Title 3877'
+[2022-06-17 21:39:13,438] Edit_Post - Step 01: Open Admin Site
+[2022-06-17 21:39:13,447] Delete_Post - Step 01: Open Admin Site
+[2022-06-17 21:39:13,453] OS name = windows 10
+[2022-06-17 21:39:13,453] Driver instance name = firefoxdriver: firefox on windows (c72141e6-a9b7-425b-befa-91675ae3f4d8)
+[2022-06-17 21:40:39,299] Pre-Condition - Step 01: Open browser and admin Site
+[2022-06-17 21:40:46,485] Pre-Condition - Step 02: Enter to Username textbox with value: automationfc
+[2022-06-17 21:40:46,745] Pre-Condition - Step 03: Enter to Password textbox: automationfc
+[2022-06-17 21:40:46,878] Pre-Condition - Step 04: Click to Login button
+[2022-06-17 21:40:49,345] Create_Post - Step 01: Click to 'Posts' menu link
+[2022-06-17 21:40:50,751] Create_Post - Step 02: Get 'Search Posts' Page Url
+[2022-06-17 21:40:50,758] Create_Post - Step 03: Click to 'Add New' button
+[2022-06-17 21:40:53,119] Create_Post - Step 04: Enter to post title
+[2022-06-17 21:40:55,930] Create_Post - Step 05: Enter to body
+[2022-06-17 21:40:57,209] Create_Post - Step 06: Click to Publish button
+[2022-06-17 21:40:57,626] Create_Post - Step 07: Click to Pre-Publish button
+[2022-06-17 21:40:57,957] Create_Post - Step 08: Verify 'Post published' message is displayed
+[2022-06-17 21:41:16,986] Search_Post - Step 01: Open 'Search Post' page
+[2022-06-17 21:41:17,450] Edit_Post - Step 01: Open Admin Site
+[2022-06-17 21:41:17,459] Delete_Post - Step 01: Open Admin Site
+[2022-06-17 21:41:17,466] OS name = windows 10
+[2022-06-17 21:41:17,466] Driver instance name = firefoxdriver: firefox on windows (16b632cf-1a76-451d-a674-fcff2b157157)
+[2022-06-17 21:41:17,480] Tried to run command without establishing a connection
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
+System info: host: 'LAPTOP-6BCBJ26G', ip: '192.168.0.114', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.12'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 101.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20220608170832, moz:geckodriverVersion: 0.31.0, moz:headless: false, moz:processID: 21832, moz:profile: C:\Users\hp\AppData\Local\T..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 16b632cf-1a76-451d-a674-fcff2b157157
+[2022-06-17 21:44:49,020] Pre-Condition - Step 01: Open browser and admin Site
+[2022-06-17 21:45:15,860] OS name = windows 10
+[2022-06-17 21:45:15,862] Driver instance name = firefoxdriver: firefox on windows (bdb5334e-77e4-4d7e-ba32-320a19dccf23)
+[2022-06-18 09:10:08,882] Pre-Condition - Step 01: Open browser and admin Site
+[2022-06-18 09:10:20,934] Pre-Condition - Step 02: Enter to Username textbox with value: automationfc
+[2022-06-18 09:10:21,233] Pre-Condition - Step 03: Enter to Password textbox: automationfc
+[2022-06-18 09:10:21,480] Pre-Condition - Step 04: Click to Login button
+[2022-06-18 09:10:26,989] Create_Post - Step 01: Click to 'Posts' menu link
+[2022-06-18 09:10:30,964] Create_Post - Step 02: Get 'Search Posts' Page Url
+[2022-06-18 09:10:30,975] Create_Post - Step 03: Click to 'Add New' button
+[2022-06-18 09:10:36,354] Create_Post - Step 04: Enter to post title
+[2022-06-18 09:10:41,409] Create_Post - Step 05: Enter to body
+[2022-06-18 09:10:42,764] Create_Post - Step 06: Click to Publish button
+[2022-06-18 09:10:43,240] Create_Post - Step 07: Click to Pre-Publish button
+[2022-06-18 09:10:43,697] Create_Post - Step 08: Verify 'Post published' message is displayed
+[2022-06-18 09:10:57,698] Search_Post - Step 01: Open 'Search Post' page
+[2022-06-18 09:10:58,404] Edit_Post - Step 01: Open Admin Site
+[2022-06-18 09:10:58,413] Delete_Post - Step 01: Open Admin Site
+[2022-06-18 09:10:58,425] OS name = windows 10
+[2022-06-18 09:10:58,426] Driver instance name = firefoxdriver: firefox on windows (625ba579-11d5-4d0f-a8ea-91c3d6d2d9c6)
+[2022-06-18 09:10:58,443] Tried to run command without establishing a connection
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
+System info: host: 'LAPTOP-6BCBJ26G', ip: '192.168.0.114', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.12'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 101.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20220608170832, moz:geckodriverVersion: 0.31.0, moz:headless: false, moz:processID: 20840, moz:profile: C:\Users\hp\AppData\Local\T..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 625ba579-11d5-4d0f-a8ea-91c3d6d2d9c6
+[2022-06-19 09:48:16,968] Pre-Condition - Step 01: Open browser and admin Site
+[2022-06-19 09:48:25,022] OS name = windows 10
+[2022-06-19 09:48:25,022] Driver instance name = firefoxdriver: firefox on windows (b18f38af-d40a-49b5-9504-b1749ed71492)

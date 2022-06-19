@@ -2,9 +2,14 @@ package commons;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.commons.collections.map.HashedMap;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.joda.time.DateTime;
@@ -14,6 +19,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.opera.OperaDriver;
 import org.testng.Assert;
@@ -40,7 +46,13 @@ public class BaseTest {
 		BrowserList browserList = BrowserList.valueOf(browserName.toUpperCase());
 		if(browserList == BrowserList.FIREFOX) {
 			WebDriverManager.firefoxdriver().setup();
-			driver = new FirefoxDriver();
+			
+//			System.setProperty(FirefoxDriver.SystemProperty.DRIVER_USE_MARIONETTE, "true");
+//			System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE, GlobalConstants.PROJECT_PATH + "\\browserLogs\\FirefoxLog.log");
+			
+			FirefoxOptions options = new FirefoxOptions();
+			options.addPreference("intl.accept_languages", "vi-vn, vi, en-us, en");
+			driver = new FirefoxDriver(options);
 		}else if(browserList == BrowserList.H_FIREFOX) {
 			WebDriverManager.firefoxdriver().setup();
 			FirefoxOptions options = new FirefoxOptions();
@@ -50,7 +62,21 @@ public class BaseTest {
 		}
 		else if (browserList == BrowserList.CHROME) {
 			WebDriverManager.chromedriver().setup();
-			driver = new ChromeDriver();
+			
+//			System.setProperty("webdriver.chrome.args", "--disable-logging");
+//			System.setProperty("webdriver.chrome.silentOutput", "true");
+			
+			ChromeOptions options = new ChromeOptions();
+			
+			Map<String, Object> prefs = new HashMap<String,  Object>();
+			prefs.put("credentials_enable_service", false);
+			prefs.put("profile.password_manager_enabled", false);
+			options.setExperimentalOption("prefs", prefs);
+			
+			options.setExperimentalOption("useAutomationExtension", false);
+			options.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
+			
+			driver = new ChromeDriver(options);
 		}
 		else if (browserList == BrowserList.H_CHROME) {
 			WebDriverManager.chromedriver().setup();

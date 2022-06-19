@@ -1,0 +1,35 @@
+1655608870103	geckodriver	INFO	Listening on 127.0.0.1:33878
+1655608871107	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-no-remote" "-profile" "C:\\Users\\hp\\AppData\\Local\\Temp\\rust_mozprofileAjaq47"
+1655608871564	Marionette	INFO	Marionette enabled
+WARNING: content window passed to PrivateBrowsingUtils.isWindowPrivate. Use isContentWindowPrivate instead (but only for frame scripts).
+pbu_isWindowPrivate@resource://gre/modules/PrivateBrowsingUtils.jsm:27:11
+isBrowserPrivate@resource://gre/modules/PrivateBrowsingUtils.jsm:47:19
+loadURI@resource://gre/modules/RemoteWebNavigation.jsm:90:51
+loadURI/<@chrome://global/content/elements/browser-custom-element.js:810:28
+_wrapURIChangeCall@chrome://global/content/elements/browser-custom-element.js:739:9
+loadURI@chrome://global/content/elements/browser-custom-element.js:809:12
+loadURI@chrome://mozapps/content/extensions/aboutaddons.js:2483:18
+render/<@chrome://mozapps/content/extensions/aboutaddons.js:2462:14
+render@chrome://mozapps/content/extensions/aboutaddons.js:2421:11
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\hp\\AppData\\Local\\Temp\\rust_mozprofileAjaq47\\search.json.mozlz4", (void 0)))
+1655608873420	Marionette	INFO	Listening on port 62494
+Read port: 62494
+1655608873564	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://demo.nopcommerce.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message JavaScript error: resource://gre/modules/LoginManagerParent.jsm, lfinor:" "he 136: TypteError: gRecipetMaps://denager is nmull
+o.JavaScript error: nreopcommerce.com"
+source://consogrele.warn: Login/Recipes: "getRecipes: fallinmg baoduck toles/Lo a ginMsynchranaonous mgerPessaarent.jsm, linge fe 136: TypeError: gRecipeor:" Mana"https://dger isemo.no nullpcomm
+erce.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message foJar:" "httpvaScripts:/ error/demo.n: resource://gropcoemmer/modules/LoginManagerPce.com"
+arent.jsm, line 136: TypeError: gRecipeManager is null
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous messagJae vfoaScript errorr:" "ht:tps://demo. resource://gre/modulnopcommerce.com"
+es/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://demo.nopcommerce.com"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "hJavaScript error:t resotps:urce://gre///demodules/LoginMamno.nopcommerce.com"
+agerParent.jsm, line console.warn:136: T LoginRypeEecipes: "getRecipes: falling bacrk to a synchrror:onous mes gRsage for:" "ehttps://decmo.nopcipeManagommeer is rce.null
+com"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://demo.nJaopcommercev.com"
+aScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+1655608882223	Marionette	INFO	Stopped listening on port 62494
