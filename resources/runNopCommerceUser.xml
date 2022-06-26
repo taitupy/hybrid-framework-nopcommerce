@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<suite name="NopCommerce - User" parallel = "false">
+<suite name="NopCommerce - User">
+	<parameter name="url" value="https://demo.nopcommerce.com/" />
 
 	<listeners>
 		<listener class-name="commons.MethodListener" />
@@ -10,12 +11,17 @@
 		<listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
 	</listeners>
 
-	<parameter name="enviroment" value="DEV" />
-
 	<test name="Run on FIREFOX">
 		<parameter name="browser" value="firefox" />
 		<classes>
-			<class name="com.nopcommerce.user.Level_19_Independence_Test" />
+			<class name="com.nopcommerce.user.Level_20_Fake_Data" />
+		</classes>
+	</test>
+
+	<test name="Run on CHROME">
+		<parameter name="browser" value="chrome" />
+		<classes>
+			<class name="com.nopcommerce.user.Level_20_Fake_Data" />
 		</classes>
 	</test>
 
