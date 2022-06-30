@@ -1,6 +1,5 @@
 package commons;
 
-import java.util.Date;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
@@ -167,14 +166,17 @@ public class BasePage {
 	}
 
 	public void clickToElement(WebDriver driver, String locatorType) {
+		hightlightElement(driver, locatorType);
 		getWebElement(driver, locatorType).click();
 	}
 
 	public void clickToElement(WebDriver driver, String locatorType, String... dynamicValues) {
+		hightlightElement(driver, locatorType, dynamicValues);
 		getWebElement(driver, getDynamicXpath(locatorType, dynamicValues)).click();
 	}
 
 	public void sendkeyToElement(WebDriver driver, String locatorType, String textValue) {
+		hightlightElement(driver, locatorType);
 		WebElement element = getWebElement(driver, locatorType);
 		element.clear();
 		element.sendKeys(textValue);
@@ -186,6 +188,7 @@ public class BasePage {
 	}
 
 	public void sendkeyToElement(WebDriver driver, String locatorType, String textValue, String... dynamicValues) {
+		hightlightElement(driver, locatorType, dynamicValues);
 		WebElement element = getWebElement(driver, getDynamicXpath(locatorType, dynamicValues));
 		element.clear();
 		element.sendKeys(textValue);
@@ -273,6 +276,7 @@ public class BasePage {
 	}
 
 	public void checkToDefaultCheckboxOrRadio(WebDriver driver, String locatorType) {
+		hightlightElement(driver, locatorType);
 		WebElement element = getWebElement(driver, locatorType);
 		if (!element.isSelected()) {
 			element.click();
@@ -280,6 +284,7 @@ public class BasePage {
 	}
 
 	public void checkToDefaultCheckboxOrRadio(WebDriver driver, String locatorType, String... dynamicValues) {
+		hightlightElement(driver, locatorType, dynamicValues);
 		WebElement element = getWebElement(driver, getDynamicXpath(locatorType, dynamicValues));
 		if (!element.isSelected()) {
 			element.click();
@@ -301,6 +306,7 @@ public class BasePage {
 	}
 
 	public boolean isElementDisplayed(WebDriver driver, String locatorType) {
+		hightlightElement(driver, locatorType);
 		try {
 			// Tim thay element:
 			// Case 1 : Displayed - tra ve true
@@ -313,6 +319,7 @@ public class BasePage {
 	}
 
 	public boolean isElementDisplayed(WebDriver driver, String locatorType, String... dynamicValues) {
+		hightlightElement(driver, locatorType, dynamicValues);
 		return getWebElement(driver, getDynamicXpath(locatorType, dynamicValues)).isDisplayed();
 	}
 	
@@ -383,10 +390,21 @@ public class BasePage {
 		JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
 		jsExecutor.executeScript("window.scrollBy(0,document.body.scrollHeight)");
 	}
-
-	public void highlightElement(WebDriver driver, String locatorType) {
+	
+	public void hightlightElement(WebDriver driver, String locatorType) {
 		JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
 		WebElement element = getWebElement(driver, locatorType);
+		String originalStyle = element.getAttribute("style");
+		jsExecutor.executeScript("arguments[0].setAttribute(arguments[1], arguments[2])", element, "style",
+				"border: 2px solid red; border-style: dashed;");
+		sleepInSecond(1);
+		jsExecutor.executeScript("arguments[0].setAttribute(arguments[1], arguments[2])", element, "style",
+				originalStyle);
+	}
+
+	public void hightlightElement(WebDriver driver, String locatorType, String... dynamicValues) {
+		JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+		WebElement element = getWebElement(driver, getDynamicXpath(locatorType, dynamicValues));
 		String originalStyle = element.getAttribute("style");
 		jsExecutor.executeScript("arguments[0].setAttribute(arguments[1], arguments[2])", element, "style",
 				"border: 2px solid red; border-style: dashed;");
