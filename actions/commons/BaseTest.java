@@ -4,14 +4,12 @@ import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
-import org.apache.commons.collections.map.HashedMap;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.joda.time.DateTime;
@@ -22,7 +20,6 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
-import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.opera.OperaDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -274,6 +271,60 @@ public class BaseTest {
 		
 		driver.manage().timeouts().implicitlyWait(GlobalConstants.LONG_TIMEOUT, TimeUnit.SECONDS);
 		
+//		driver.get(appUrl);
+		driver.get(getEnviromenUrl(appUrl));
+		
+		return driver;
+	}
+	
+	protected WebDriver getBrowserDriverBrowserstack(String browserName, String appUrl, String osName, String osVersion) {
+		DesiredCapabilities capability = new DesiredCapabilities();
+		capability.setCapability("os", osName);
+		capability.setCapability("os_version", osVersion);
+		capability.setCapability("browser", browserName);
+		capability.setCapability("browser_version", "latest");
+		capability.setCapability("browserstack.debug", "true");
+		capability.setCapability("project", "NopCommerce");
+		capability.setCapability("resolution", "1920x1080");
+		capability.setCapability("os", "Run on " + osName + " | " + osVersion + " | " + browserName);
+		
+		try {
+			driver = new RemoteWebDriver(new URL(GlobalConstants.BROWSER_STACK_URL), capability);
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+		}
+		
+		driver.manage().timeouts().implicitlyWait(GlobalConstants.LONG_TIMEOUT, TimeUnit.SECONDS);
+		
+//		driver.get(appUrl);
+		driver.get(getEnviromenUrl(appUrl));
+		
+		return driver;
+	}
+	
+	protected WebDriver getBrowserDriverSaucelab(String browserName, String appUrl, String osName) {
+		DesiredCapabilities capability = new DesiredCapabilities();
+		capability.setCapability("platformName", osName);
+		capability.setCapability("browserName", browserName);
+		capability.setCapability("browserVersion", "latest");
+		capability.setCapability("os", "Run on " + osName + " | " + browserName);
+		
+		Map<String, Object> sauceOptions = new HashMap<>();
+		if(osName.contains("Windows")) {
+			sauceOptions.put("screenResolution", "1920x1080");	
+		}else {
+			sauceOptions.put("screenResolution", "1920x1440");	
+		}
+		capability.setCapability("sauce:options", sauceOptions);
+		
+		try {
+			driver = new RemoteWebDriver(new URL(GlobalConstants.SAUCELAB_URL), capability);
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+		}
+		
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		driver.manage().window().maximize();
 //		driver.get(appUrl);
 		driver.get(getEnviromenUrl(appUrl));
 		

@@ -22,17 +22,16 @@ public class GlobalConstants {
 	public static final String AUTO_IT_SCRIPT= PROJECT_PATH + File.separator + "autoIT";
 	public static final String REPORTNG_SCREENSHOT= PROJECT_PATH + File.separator + "reportNGImage" + File.separator;
 	
-	// Database Account/ User/ Pass/ Port
-	public static final String DB_DEV_URL = "32.18.252.185:9860";
-	public static final String DB_DEV_USER = "automationfc";
-	public static final String DB_DEV_PASS = "P@ssw0rld1@";
-	
-	public static final String DB_TEST_URL = "32.18.252.185:9860";
-	public static final String DB_TEST_USER = "automationfc";
-	public static final String DB_TEST_PASS = "P@ssw0rld1@";
-	
 	public static final long SHORT_TIMEOUT = 5;
-	public static final long LONG_TIMEOUT = 30;
+	public static final long LONG_TIMEOUT = 20;
 	public static final long RETRY_TEST_FAIL = 3;
+	
+	public static final String BROWSER_USERNAME = "	taitunguyen_J9wBhN";
+	public static final String BROWSER_AUTOMATE_KEY = "z8XUAZPdW65p4VkAsbJD";
+	public static final String BROWSER_STACK_URL = "https://" + BROWSER_USERNAME + ":" + BROWSER_AUTOMATE_KEY + "@hub-cloud.browserstack.com/wd/hub";
+	
+	public static final String SAUCELAB_USERNAME = "oauth-nguyentaitupy-561fe";
+	public static final String SAUCELAB_AUTOMATE_KEY = "75cddf1b-2c7b-424b-84c8-6c05a9b66ed3";
+	public static final String SAUCELAB_URL = "https://" + SAUCELAB_USERNAME + ":" + SAUCELAB_AUTOMATE_KEY + "@ondemand.apac-southeast-1.saucelabs.com:443/wd/hub";
 	
 }
