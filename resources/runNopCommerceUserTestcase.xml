@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite name="NopCommerce - User">
 
-	<parameter name="url" value="testing" />
+	<parameter name="url" value="dev" />
 
 	<listeners>
 		<listener class-name="commons.MethodListener" />

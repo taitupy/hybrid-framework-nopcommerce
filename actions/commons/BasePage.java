@@ -166,17 +166,17 @@ public class BasePage {
 	}
 
 	public void clickToElement(WebDriver driver, String locatorType) {
-		hightlightElement(driver, locatorType);
+		//hightlightElement(driver, locatorType);
 		getWebElement(driver, locatorType).click();
 	}
 
 	public void clickToElement(WebDriver driver, String locatorType, String... dynamicValues) {
-		hightlightElement(driver, locatorType, dynamicValues);
+		//hightlightElement(driver, locatorType, dynamicValues);
 		getWebElement(driver, getDynamicXpath(locatorType, dynamicValues)).click();
 	}
 
 	public void sendkeyToElement(WebDriver driver, String locatorType, String textValue) {
-		hightlightElement(driver, locatorType);
+		//hightlightElement(driver, locatorType);
 		WebElement element = getWebElement(driver, locatorType);
 		element.clear();
 		element.sendKeys(textValue);
@@ -188,7 +188,7 @@ public class BasePage {
 	}
 
 	public void sendkeyToElement(WebDriver driver, String locatorType, String textValue, String... dynamicValues) {
-		hightlightElement(driver, locatorType, dynamicValues);
+		//hightlightElement(driver, locatorType, dynamicValues);
 		WebElement element = getWebElement(driver, getDynamicXpath(locatorType, dynamicValues));
 		element.clear();
 		element.sendKeys(textValue);
@@ -276,7 +276,7 @@ public class BasePage {
 	}
 
 	public void checkToDefaultCheckboxOrRadio(WebDriver driver, String locatorType) {
-		hightlightElement(driver, locatorType);
+		//hightlightElement(driver, locatorType);
 		WebElement element = getWebElement(driver, locatorType);
 		if (!element.isSelected()) {
 			element.click();
@@ -284,7 +284,7 @@ public class BasePage {
 	}
 
 	public void checkToDefaultCheckboxOrRadio(WebDriver driver, String locatorType, String... dynamicValues) {
-		hightlightElement(driver, locatorType, dynamicValues);
+		//hightlightElement(driver, locatorType, dynamicValues);
 		WebElement element = getWebElement(driver, getDynamicXpath(locatorType, dynamicValues));
 		if (!element.isSelected()) {
 			element.click();
@@ -306,7 +306,7 @@ public class BasePage {
 	}
 
 	public boolean isElementDisplayed(WebDriver driver, String locatorType) {
-		hightlightElement(driver, locatorType);
+		//hightlightElement(driver, locatorType);
 		try {
 			// Tim thay element:
 			// Case 1 : Displayed - tra ve true
@@ -319,7 +319,7 @@ public class BasePage {
 	}
 
 	public boolean isElementDisplayed(WebDriver driver, String locatorType, String... dynamicValues) {
-		hightlightElement(driver, locatorType, dynamicValues);
+		//hightlightElement(driver, locatorType, dynamicValues);
 		return getWebElement(driver, getDynamicXpath(locatorType, dynamicValues)).isDisplayed();
 	}
 	

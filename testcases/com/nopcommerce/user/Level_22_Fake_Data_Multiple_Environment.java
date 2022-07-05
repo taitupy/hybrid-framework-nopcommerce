@@ -27,6 +27,9 @@ public class Level_22_Fake_Data_Multiple_Environment extends BaseTest{
 		ConfigFactory.setProperty("evn", appUrl);
 		environment = ConfigFactory.create(Environment.class);
 		driver = getBrowserDriver(browserName, environment.appUrl());
+		
+		System.out.println(environment.osName());
+		System.out.println(driver.getCurrentUrl());
 	}
 	
 	@Test

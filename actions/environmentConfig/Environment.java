@@ -3,16 +3,16 @@ package environmentConfig;
 import org.aeonbits.owner.Config;
 import org.aeonbits.owner.Config.Sources;
 
-@Sources({ "classpath:${env}.properties" })
+@Sources({ "classpath:${evn}.properties" })
 public interface Environment extends Config{
 	String osName();
 	
 	@Key("app.url")
-	String applicationUrl();
+	String appUrl();
 	
 	@Key("app.username")
-	String applicationUsername();
+	String appUsername();
 	
 	@Key("app.password")
-	String applicationPassword();
+	String appPassword();
 }
