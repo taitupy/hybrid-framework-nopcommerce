@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<suite name="NopCommerce - User">
+<suite name="NopCommerce - User" parallel="tests" thread-count="3">
+
 	<parameter name="url" value="DEV" />
 
 	<listeners>
@@ -13,6 +14,20 @@
 
 	<test name="Run on FIREFOX">
 		<parameter name="browser" value="firefox" />
+		<classes>
+			<class name="com.nopcommerce.user.Level_20_Fake_Data" />
+		</classes>
+	</test>
+
+	<test name="Run on CHROME">
+		<parameter name="browser" value="chrome" />
+		<classes>
+			<class name="com.nopcommerce.user.Level_20_Fake_Data" />
+		</classes>
+	</test>
+
+	<test name="Run on EDGE">
+		<parameter name="browser" value="edge" />
 		<classes>
 			<class name="com.nopcommerce.user.Level_20_Fake_Data" />
 		</classes>
