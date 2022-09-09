@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite name="NopCommerce - User">
 
-	<parameter name="url" value="DEV" />
+	<parameter name="envName" value="Saucelab" />
+	<parameter name="serverName" value="dev" />
 
 	<listeners>
 		<listener class-name="commons.MethodListener" />
@@ -10,7 +11,7 @@
 		<listener class-name="reportConfig.AllureTestListener" />
 		<listener class-name="org.uncommons.reportng.HTMLReporter" />
 		<listener
-		class-name="org.uncommons.reportng.JUnitXMLReporter" />
+			class-name="org.uncommons.reportng.JUnitXMLReporter" />
 	</listeners>
 
 	<test name="Run on Firefox">
@@ -18,7 +19,7 @@
 		<parameter name="osName" value="macOS 11.0" />
 		<classes>
 			<class
-				name="com.nopcommerce.cloud.Level_24_Nopcommerce_Saucelab" />
+				name="com.nopcommerce.cloud.Level_24_Nopcommerce_Run_All" />
 		</classes>
 	</test>
 
@@ -27,7 +28,7 @@
 		<parameter name="osName" value="Windows 10" />
 		<classes>
 			<class
-				name="com.nopcommerce.cloud.Level_24_Nopcommerce_Saucelab" />
+				name="com.nopcommerce.cloud.Level_24_Nopcommerce_Run_All" />
 		</classes>
 	</test>
 

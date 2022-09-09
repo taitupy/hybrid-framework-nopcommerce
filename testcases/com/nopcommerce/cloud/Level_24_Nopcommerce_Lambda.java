@@ -1,9 +1,10 @@
-package com.nopcommerce.user;
+package com.nopcommerce.cloud;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
@@ -15,7 +16,7 @@ import pageObjects.nopCommerce.user.UserLoginPageObject;
 import pageObjects.nopCommerce.user.UserRegisterPageObject;
 import ultilities.DataUtil;
 
-public class Level_20_Fake_Data extends BaseTest{
+public class Level_24_Nopcommerce_Lambda extends BaseTest{
 	WebDriver driver;
 	UserHomePageObject homePage;
 	UserLoginPageObject loginPage;
@@ -25,10 +26,10 @@ public class Level_20_Fake_Data extends BaseTest{
 	UserCustomerInforPageObject myAccountPage;
 	DataUtil fakeData;
 
-	@Parameters({"browser", "url"})
+	@Parameters({ "envName", "serverName", "browser" ,"ipAddress", "portNumber" , "osName" , "osVersion"})
 	@BeforeClass
-	public void beforeClass(String browserName, String appUrl) {
-		driver = getBrowserDriverLocal(browserName, appUrl);
+	public void beforeClass(@Optional("local") String envName,@Optional("dev") String serverName,@Optional("chrome") String browserName,@Optional("localhost") String ipAddress,@Optional("4444") String portNumber,@Optional("Windows") String osName,@Optional("10") String osVersion) {
+		driver = getBrowserDriver(browserName, serverName, envName, ipAddress, portNumber, osName, osVersion);
 		
 		homePage = PageGeneratorManager.getUserHomePage(driver);
 		fakeData = DataUtil.getData();
@@ -68,51 +69,9 @@ public class Level_20_Fake_Data extends BaseTest{
 
 		Assert.assertEquals(loginPage.getErrorMessageAtEmailTextbox(), "Please enter your email");
 	}
-
-	@Test
-	public void Login_02_Invalid_Email() {
-		loginPage = homePage.openLoginPage();
-		
-		loginPage.inputToEmailTextbox(invalidEmail);
-		loginPage.clickToLoginButton();
-		
-		Assert.assertEquals(loginPage.getErrorMessageAtEmailTextbox(), "Wrong email");
-	}
-
-	@Test
-	public void Login_03_Email_Not_Found() {
-		loginPage = homePage.openLoginPage();
-		
-		loginPage.inputToEmailTextbox(notFoundEmail);
-		loginPage.clickToLoginButton();
-		
-		Assert.assertEquals(loginPage.getErrorMessageAtEmailTextboxIsNotRegisterYet(), "Login was unsuccessful. Please correct the errors and try again.\nNo customer account found");
-	}
 	
 	@Test
-	public void Login_04_Existing_Email_Empty_Password() {
-		loginPage = homePage.openLoginPage();
-		
-		loginPage.inputToEmailTextbox(existingEmail);
-		loginPage.inputToPasswordTextbox("");
-		loginPage.clickToLoginButton();
-		
-		Assert.assertEquals(loginPage.getErrorMessageAtEmailTextboxIsNotRegisterYet(), "Login was unsuccessful. Please correct the errors and try again.\nThe credentials provided are incorrect");
-	}
-	
-	@Test
-	public void Login_05_Existing_Email_Incorrect_Password() {
-		loginPage = homePage.openLoginPage();
-		
-		loginPage.inputToEmailTextbox(existingEmail);
-		loginPage.inputToPasswordTextbox("222333");
-		loginPage.clickToLoginButton();
-		
-		Assert.assertEquals(loginPage.getErrorMessageAtEmailTextboxIsNotRegisterYet(), "Login was unsuccessful. Please correct the errors and try again.\nThe credentials provided are incorrect");
-	}
-
-	@Test
-	public void Login_06_Valid_Email_Password() {
+	public void Login_02_Valid_Email_Password() {
 		loginPage = homePage.openLoginPage();
 		
 		loginPage.inputToEmailTextbox(existingEmail);

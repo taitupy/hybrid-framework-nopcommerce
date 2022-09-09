@@ -28,7 +28,7 @@ public class Level_24_Nopcommerce_Local extends BaseTest{
 	@Parameters({ "browser", "url" })
 	@BeforeClass
 	public void beforeClass(String browserName, String appUrl) {
-		driver = getBrowserDriver(browserName, appUrl);
+		driver = getBrowserDriverLocal(browserName, appUrl);
 		
 		homePage = PageGeneratorManager.getUserHomePage(driver);
 		fakeData = DataUtil.getData();

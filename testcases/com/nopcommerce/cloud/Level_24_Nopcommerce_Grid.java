@@ -28,7 +28,7 @@ public class Level_24_Nopcommerce_Grid extends BaseTest{
 	@Parameters({"browser", "url", "ipAddress", "port" })
 	@BeforeClass
 	public void beforeClass(String browserName, String appUrl, String ipAddress, String port) {
-		driver = getBrowserDriver(browserName, appUrl, ipAddress, port);
+		driver = getBrowserDriverGrid(browserName, appUrl, ipAddress, port);
 		
 		homePage = PageGeneratorManager.getUserHomePage(driver);
 		fakeData = DataUtil.getData();

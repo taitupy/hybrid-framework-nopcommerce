@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite name="NopCommerce - User">
 
-	<parameter name="envName" value="browserStack" />
+	<parameter name="envName" value="local" />
 	<parameter name="serverName" value="dev" />
 
 	<listeners>
-		<listener class-name="commons.MethodListener" />s
+		<listener class-name="commons.MethodListener" />
 		<listener class-name="reportConfig.reportNGListener" />
 		<listener class-name="reportConfig.ExtentTestListener" />
 		<listener class-name="reportConfig.AllureTestListener" />
@@ -17,17 +17,14 @@
 	<test name="Run on Firefox">
 		<parameter name="browser" value="firefox" />
 		<parameter name="osName" value="Windows" />
-		<parameter name="osVersion" value="10" />
 		<classes>
-			<class
-				name="com.nopcommerce.cloud.Level_24_Nopcommerce_Run_All" />
+			<class name="com.nopcommerce.cloud.Level_24_Nopcommerce_Run_All" />
 		</classes>
 	</test>
 
-	<test name="Run on Chrome">
-		<parameter name="browser" value="chrome" />
-		<parameter name="osName" value="OS X" />
-		<parameter name="osVersion" value="Big Sur" />
+	<test name="Run on Opera">
+		<parameter name="browser" value="Opera" />
+		<parameter name="osName" value="Windows" />
 		<classes>
 			<class
 				name="com.nopcommerce.cloud.Level_24_Nopcommerce_Run_All" />

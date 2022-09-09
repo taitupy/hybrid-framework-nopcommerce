@@ -45,7 +45,7 @@ public class Post_01_Create_Read_Update_Delete_Search extends BaseTest {
 		log.info("Pre-Condition - Step 01: Open browser and admin Site");
 		this.adminUrl = adminUrl;
 		this.endUserUrl = endUserUrl;
-		driver = getBrowserDriver(browserName, this.adminUrl);
+		driver = getBrowserDriverLocal(browserName, this.adminUrl);
 		adminLoginPage = PageGeneratorManager.getAdminLoginPage(driver);
 
 		log.info("Pre-Condition - Step 02: Enter to Username textbox with value: " + adminUserName);

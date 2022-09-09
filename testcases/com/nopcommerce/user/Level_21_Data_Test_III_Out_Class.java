@@ -28,7 +28,7 @@ public class Level_21_Data_Test_III_Out_Class extends BaseTest{
 	@Parameters({"browser", "url"})
 	@BeforeClass
 	public void beforeClass(String browserName, String appUrl) {
-		driver = getBrowserDriver(browserName, appUrl);
+		driver = getBrowserDriverLocal(browserName, appUrl);
 		
 		homePage = PageGeneratorManager.getUserHomePage(driver);
 		fakeData = DataUtil.getData();

@@ -29,6 +29,12 @@ import org.testng.Reporter;
 import org.testng.annotations.BeforeSuite;
 
 import exception.BrowserNotSupport;
+import factoryEnvironment.BrowserstackFactory;
+import factoryEnvironment.EnviromentList;
+import factoryEnvironment.GridFactory;
+import factoryEnvironment.LambdaFactory;
+import factoryEnvironment.LocalFactory;
+import factoryEnvironment.SaucelabFactory;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseTest {
@@ -42,6 +48,34 @@ public class BaseTest {
 	
 	protected BaseTest() {
 		log = LogFactory.getLog(getClass());
+	}
+	
+	protected WebDriver getBrowserDriver(String browserName, String serverName, String envName, String ipAddress, String portNumber, String osName, String osVersion) {
+		switch(envName) {
+		case "local":
+			driver = new LocalFactory(browserName).createDriver();
+			break;
+		case "grid":
+			driver = new GridFactory(browserName, ipAddress, portNumber).createDriver();
+			break;
+		case "browserStack":
+			driver = new BrowserstackFactory(browserName, osName, osVersion).createDriver();
+			break;
+		case "Saucelab":
+			driver = new SaucelabFactory(browserName, osName).createDriver();
+			break;
+		case "Lambda":
+			driver = new LambdaFactory(browserName, osName).createDriver();
+			break;	
+		default:
+			driver = new LocalFactory(browserName).createDriver();
+			break;
+		}
+		
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		driver.manage().window().maximize();
+		driver.get(getEnviromenUrl(serverName));
+		return driver;
 	}
 	
 	protected WebDriver getBrowserDriver(String browserName) throws BrowserNotSupport {
@@ -127,7 +161,7 @@ public class BaseTest {
 		return driver;
 	}
 	
-	protected WebDriver getBrowserDriver(String browserName, String appUrl) {
+	protected WebDriver getBrowserDriverLocal(String browserName, String appUrl) {
 		BrowserList browserList = BrowserList.valueOf(browserName.toUpperCase());
 		if(browserList == BrowserList.FIREFOX) {
 			WebDriverManager.firefoxdriver().setup();
@@ -194,7 +228,7 @@ public class BaseTest {
 		return driver;
 	}
 	
-	protected WebDriver getBrowserDriver(String browserName, String appUrl, String ipAddress, String portNumber) {
+	protected WebDriver getBrowserDriverGrid(String browserName, String appUrl, String ipAddress, String portNumber) {
 		BrowserList browserList = BrowserList.valueOf(browserName.toUpperCase());
 		DesiredCapabilities capability = null;
 		

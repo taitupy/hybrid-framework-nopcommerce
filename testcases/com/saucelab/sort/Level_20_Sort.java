@@ -19,7 +19,7 @@ public class Level_20_Sort extends BaseTest{
 	@Parameters({ "browser", "url" })
 	@BeforeClass
 	public void beforeClass(String browserName, String appUrl) {
-		driver = getBrowserDriver(browserName, appUrl);
+		driver = getBrowserDriverLocal(browserName, appUrl);
 		
 		driver.manage().window().maximize();
 		

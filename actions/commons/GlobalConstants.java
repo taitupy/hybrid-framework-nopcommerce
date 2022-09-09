@@ -34,4 +34,8 @@ public class GlobalConstants {
 	public static final String SAUCELAB_AUTOMATE_KEY = "75cddf1b-2c7b-424b-84c8-6c05a9b66ed3";
 	public static final String SAUCELAB_URL = "https://" + SAUCELAB_USERNAME + ":" + SAUCELAB_AUTOMATE_KEY + "@ondemand.apac-southeast-1.saucelabs.com:443/wd/hub";
 	
+	public static final String LAMBDA_USERNAME = "tunguyen96spkt";
+	public static final String LAMBDA_ACCESS_KEY = "L9ppibAEJDBf8mx7DED9InjwfuZLmRfIw5jKR3tfhDeZkxHu3p";
+	public static final String LAMBDA_URL = "https://" + LAMBDA_USERNAME + ":" + LAMBDA_ACCESS_KEY + "@hub.lambdatest.com/wd/hub";
+
 }
