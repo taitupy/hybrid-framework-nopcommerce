@@ -27,7 +27,7 @@ public class GlobalConstants {
 	public static final long RETRY_TEST_FAIL = 3;
 	
 	public static final String BROWSER_USERNAME = "	taitunguyen_J9wBhN";
-	public static final String BROWSER_AUTOMATE_KEY = "z8XUAZPdW65p4VkAsbJD";
+	public static final String BROWSER_AUTOMATE_KEY = "xAkpjYvqqm7axSCUQPix";
 	public static final String BROWSER_STACK_URL = "https://" + BROWSER_USERNAME + ":" + BROWSER_AUTOMATE_KEY + "@hub-cloud.browserstack.com/wd/hub";
 	
 	public static final String SAUCELAB_USERNAME = "oauth-nguyentaitupy-561fe";

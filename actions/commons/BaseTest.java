@@ -365,6 +365,35 @@ public class BaseTest {
 		return driver;
 	}
 	
+	protected WebDriver getBrowserDriverLambda(String browserName, String appUrl, String osName) {
+		DesiredCapabilities capability = new DesiredCapabilities();
+		capability.setCapability("browser", browserName);
+		capability.setCapability("os", osName);
+		capability.setCapability("version", "latest");
+		capability.setCapability("video", true);
+		capability.setCapability("visual", true);
+		
+		if(osName.contains("Windows")) {
+			capability.setCapability("screenResolution", "1920x1080");
+		}else {
+			capability.setCapability("screenResolution", "2560x1600");
+		}
+		capability.setCapability("os", "Run on " + osName + "|" + browserName);
+		
+		try {
+			driver = new RemoteWebDriver(new URL(GlobalConstants.LAMBDA_URL), capability);
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+		}
+		
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		driver.manage().window().maximize();
+//		driver.get(appUrl);
+		driver.get(getEnviromenUrl(appUrl));
+		
+		return driver;
+	}
+	
 	public WebDriver getDriverInstance() {
 		return this.driver;
 	}
