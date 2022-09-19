@@ -29,6 +29,7 @@ import org.testng.Reporter;
 import org.testng.annotations.BeforeSuite;
 
 import exception.BrowserNotSupport;
+import factoryBrowser.BrowserList;
 import factoryEnvironment.BrowserstackFactory;
 import factoryEnvironment.EnviromentList;
 import factoryEnvironment.GridFactory;
